@@ -28,7 +28,7 @@
         # system.
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
-        packages.default = pkgs.coqPackages.coq-cast;
+        packages.default = pkgs.coqPackages.rocq-cast;
       };
       flake = {
         # The usual flake attributes can be defined here, including system-
@@ -37,8 +37,8 @@
 
         overlays.default = final: prev: {
           coqPackages = prev.coqPackages.overrideScope (final: prev: {
-            coq-cast = prev.mkCoqDerivation {
-              pname = "coq-cast";
+            rocq-cast = prev.mkCoqDerivation {
+              pname = "rocq-cast";
               defaultVersion = "dev";
               release.dev.src = ./.;
               propagatedBuildInputs = [
