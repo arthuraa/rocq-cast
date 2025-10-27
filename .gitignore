@@ -5,3 +5,6 @@
 *.vos
 *.vok
 *.aux
+
+.envrc
+.direnv
